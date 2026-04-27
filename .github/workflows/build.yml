@@ -11,13 +11,13 @@ jobs:
           node-version: 18
       - name: Install Cordova
         run: npm install -g cordova
-      - name: Build APK
+      - name: Build Android
         run: |
           cordova platform add android
           cordova build android --release
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
-          name: ProStore-Release-APK
+          name: ProStore-APK
           path: platforms/android/app/build/outputs/apk/release/*.apk
           
